@@ -141,6 +141,25 @@ export default class DOMMatrix {
     return this._is2D;
   }
 
+  translateSelf(x, y, z) {
+    this.m41 + x
+    this.m42 + y
+    this.m43 + z
+
+    return this
+  }
+
+  rotateSelf(degree) {
+    const rad = degree * Math.PI / 180
+
+    this.a = Math.cos(rad)
+    this.b = Math.sin(rad)
+    this.c = -Math.sin(rad)
+    this.d = Math.cos(rad)
+
+    return this
+  }
+
   toFloat32Array() {
     return new Float32Array([
       this.m11,
